@@ -24,8 +24,8 @@ public class CalculatorTest {
 			secondNumber = Double.valueOf(df.format(random.nextDouble()*10));
 			result = firstNumber + secondNumber;
 			
-			LOG.info("Testing the method with: "+ firstNumber +"and" + secondNumber);
-			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result));
+			LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
+			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result),1);
 			
 		}
 	}
