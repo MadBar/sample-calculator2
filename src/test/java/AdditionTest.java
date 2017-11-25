@@ -129,4 +129,68 @@ public class AdditionTest {
 		assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
 
 	}
+	
+	
+	//Question: Why is some results ex: -14.908999999999? We perform a round, and it works other times the loop prints..?
+	@Test
+	public void testAddSmallSizedNegativeNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+
+		for (int i = 0; i < 5; i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble() * -10));
+			secondNumber = Double.valueOf(df.format(random.nextDouble() * -10));
+			result = firstNumber + secondNumber;
+
+			double resultMethod = calculator.add(firstNumber, secondNumber);
+
+			LOG.info("Testing the method add small with: " + firstNumber + " and " + secondNumber
+					+ " . Result of those: " + result + ". The temp is " + resultMethod);
+			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
+
+		}
+	}
+
+	@Test
+	public void testAddMediumSizedNegativeNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+
+		for (int i = 0; i < 5; i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble() * 100));
+			secondNumber = Double.valueOf(df.format(random.nextDouble() * 100));
+			result = firstNumber + secondNumber;
+
+			// not in the assignment. All following methods will include this for
+			// clarification. See above method for original.
+			double resultMethod = calculator.add(firstNumber, secondNumber);
+
+			LOG.info("Testing the method add medium with: " + firstNumber + " and " + secondNumber
+					+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
+			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
+
+		}
+	}
+
+	@Test
+	public void testAddLargeSizedNegativeNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+
+		for (int i = 0; i < 5; i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble() * 1000));
+			secondNumber = Double.valueOf(df.format(random.nextDouble() * 1000));
+			result = firstNumber + secondNumber;
+
+			double resultMethod = calculator.add(firstNumber, secondNumber);
+
+			LOG.info("Testing the method add large with: " + firstNumber + " and " + secondNumber
+					+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
+			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
+
+		}
+	}
 }
