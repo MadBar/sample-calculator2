@@ -89,28 +89,38 @@ public class SubtractionTest {
 	@Test
 	public void testSubFirstZero() {
 		double firstNumber = 0;
-		double secondNumber = 5;
-		double result = firstNumber - secondNumber;
+		double secondNumber = 0;
 
-		double resultMethod = calculator.subtract(firstNumber, secondNumber);
+		for (int i = 0; i < 5; i++) {
 
-		LOG.info("Testing the method subtract first zero with: " + firstNumber + " and " + secondNumber
-				+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
-		assertEquals(Math.round(calculator.subtract(firstNumber, secondNumber)), Math.round(result), 1);
+			secondNumber = Double.valueOf(df.format(random.nextDouble() * 1000));
+			double result = firstNumber - secondNumber;
 
+			double resultMethod = calculator.subtract(firstNumber, secondNumber);
+
+			LOG.info("Testing the method subtract first zero with: " + firstNumber + " and " + secondNumber
+					+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
+			assertEquals(Math.round(calculator.subtract(firstNumber, secondNumber)), Math.round(result), 1);
+		}
 	}
 
 	@Test
 	public void testSubSecondZero() {
-		double firstNumber = 3;
+
+		double firstNumber = 0;
 		double secondNumber = 0;
-		double result = firstNumber - secondNumber;
 
-		double resultMethod = calculator.subtract(firstNumber, secondNumber);
+		for (int i = 0; i < 5; i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble() * 1000));
+			double result = firstNumber - secondNumber;
 
-		LOG.info("Testing the method subtract second zero with: " + firstNumber + " and " + secondNumber
-				+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
-		assertEquals(Math.round(calculator.subtract(firstNumber, secondNumber)), Math.round(result), 1);
+			double resultMethod = calculator.subtract(firstNumber, secondNumber);
+
+			LOG.info("Testing the method subtract second zero with: " + firstNumber + " and " + secondNumber
+					+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
+			assertEquals(Math.round(calculator.subtract(firstNumber, secondNumber)), Math.round(result), 1);
+
+		}
 
 	}
 

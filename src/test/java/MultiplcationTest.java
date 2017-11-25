@@ -88,28 +88,37 @@ public class MultiplcationTest {
 	@Test
 	public void testMultiFirstZero() {
 		double firstNumber = 0;
-		double secondNumber = 5;
-		double result = firstNumber * secondNumber;
+		double secondNumber = 0;
 
-		double resultMethod = calculator.multiply(firstNumber, secondNumber);
+		for (int i = 0; i < 5; i++) {
+			secondNumber = Double.valueOf(df.format(random.nextDouble() * 1000));
+			double result = firstNumber * secondNumber;
 
-		LOG.info("Testing the method multiply first zero with: " + firstNumber + " and " + secondNumber
-				+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
-		assertEquals(Math.round(calculator.multiply(firstNumber, secondNumber)), Math.round(result), 1);
+			double resultMethod = calculator.multiply(firstNumber, secondNumber);
+
+			LOG.info("Testing the method multiply first zero with: " + firstNumber + " and " + secondNumber
+					+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
+			assertEquals(Math.round(calculator.multiply(firstNumber, secondNumber)), Math.round(result), 1);
+
+		}
 
 	}
 
 	@Test
 	public void testMultiSecondZero() {
-		double firstNumber = 3;
+		double firstNumber = 0;
 		double secondNumber = 0;
-		double result = firstNumber * secondNumber;
 
-		double resultMethod = calculator.multiply(firstNumber, secondNumber);
+		for (int i = 0; i < 5; i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble() * 1000));
+			double result = firstNumber * secondNumber;
 
-		LOG.info("Testing the method multiply second zero with: " + firstNumber + " and " + secondNumber
-				+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
-		assertEquals(Math.round(calculator.multiply(firstNumber, secondNumber)), Math.round(result), 1);
+			double resultMethod = calculator.multiply(firstNumber, secondNumber);
+
+			LOG.info("Testing the method multiply second zero with: " + firstNumber + " and " + secondNumber
+					+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
+			assertEquals(Math.round(calculator.multiply(firstNumber, secondNumber)), Math.round(result), 1);
+		}
 
 	}
 
