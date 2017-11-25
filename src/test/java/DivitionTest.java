@@ -97,8 +97,11 @@ public class DivitionTest {
 	public void testDivZeros() {
 		double firstNumber = 1;
 		double secondNumber = 0;
+		double result = firstNumber / secondNumber;
+		double resultMethod = calculator.divide(firstNumber, secondNumber);
 
-		//Works
+		// Works but this should be handled in calculator to make the system safe and
+		// not just the test
 		// if (firstNumber == 0.0 || secondNumber == 0.0) {
 		//
 		// LOG.info(firstNumber + " , " + secondNumber + ". CAN'T DEVIDE BY ZERO!");
@@ -115,13 +118,19 @@ public class DivitionTest {
 		// Math.round(result), 1);
 		// }
 
-		// Test of handling 0-erros in Main
-		double result = firstNumber / secondNumber;
-		double resultMethod = calculator.divide(firstNumber, secondNumber);
+		// Test of handling 0-erros in Cal* This prints out Cal method sysout twice
+		// since its also called in the assert.. Don't like it.. How to fix? 
+		if (resultMethod == -0.123456789) {
 
-		LOG.info("Testing the method divide zeros with: " + firstNumber + " and " + secondNumber
-				+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
-		assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result), 1);
+			LOG.info("Testing the method divide zeros with: " + firstNumber + " and " + secondNumber
+					+ " . You can't devide by zero!!");
+			assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(-0.123456789), 1);
+		} else {
+			LOG.info("Testing the method divide zeros with: " + firstNumber + " and " + secondNumber
+					+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
+			assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result), 1);
+		}
+
 	}
 
 	@Test

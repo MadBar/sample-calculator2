@@ -69,16 +69,25 @@ public class Calculator {
 	 * @return: the result of the division.
 	 */
 	public double divide(double firstNumber, double secondNumber) {
+		// pre existing solution. non sufficient
 		// return firstNumber/secondNumber;
 
-		//Program doesn't go in here when testing.. odd.. 
-		try {
-			return firstNumber / secondNumber;
-		} catch (ArithmeticException exc) // divide by zero catch subclass
-		{
-			System.err.println("\n Sorry, can't divide by zero!\n DETAILS: " + exc); // Dvide by zero exception handling
+		// My try: Program doesn't go in here when testing.. odd..
+		// try {
+		// return firstNumber / secondNumber;
+		// } catch (ArithmeticException exc) // divide by zero catch subclass
+		// {
+		// System.err.println("\n Sorry, can't divide by zero!\n DETAILS: " + exc); //
+		// Dvide by zero exception handling
+		// return -0.123456789;
+		// }
+
+		// His solution:
+		if (secondNumber == 0) {
+			System.out.println("Divition by zero?");
 			return -0.123456789;
 		}
+		return firstNumber / secondNumber;
 	}
 
 }
