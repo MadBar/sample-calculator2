@@ -27,6 +27,8 @@ public class DivitionTest {
 			firstNumber = Double.valueOf(df.format(random.nextDouble() * 10));
 			secondNumber = Double.valueOf(df.format(random.nextDouble() * 10));
 
+			
+			//Mine:
 			if (firstNumber == 0.0 || secondNumber == 0.0) {
 
 				LOG.info(i + " - Nurs: " + firstNumber + " , " + secondNumber + ". CAN'T DEVIDE BY ZERO!");
@@ -147,7 +149,8 @@ public class DivitionTest {
 		// His:
 		// *He does all tests in the same testcase, after eachother. Smart. Just giving
 		// new values to first and second nr, each test.
-		//*He has already decided that the method should return the faulty value..? Why?
+		// *He has already decided that the method should return the faulty value..?
+		// Why?
 		// Aah, cause he only want to have a test for that maybe.. Nope. Sees like the
 		// first log should have a note saying: "Testing divide 0 and 0".
 		LOG.info("Testing the method divide zeros with: " + firstNumber + " and " + secondNumber);
@@ -175,6 +178,8 @@ public class DivitionTest {
 
 	}
 
+	// Not well formed, see test zeros above for more info. This doesnt use
+	// calculator at all. Dont have energy to fix it thogh.
 	@Test
 	public void testDivFirstZero() {
 		double firstNumber = 0;
@@ -200,6 +205,8 @@ public class DivitionTest {
 
 	}
 
+	// Not well formed, see test zeros above for more info. This doesnt use
+	// calculator at all. Dont have energy to fix it thogh.
 	@Test
 	public void testDivSecondZero() {
 		double firstNumber = 0;
