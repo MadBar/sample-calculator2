@@ -95,22 +95,33 @@ public class DivitionTest {
 
 	@Test
 	public void testDivZeros() {
-		double firstNumber = 0;
+		double firstNumber = 1;
 		double secondNumber = 0;
 
-		if (firstNumber == 0.0 || secondNumber == 0.0) {
+		//Works
+		// if (firstNumber == 0.0 || secondNumber == 0.0) {
+		//
+		// LOG.info(firstNumber + " , " + secondNumber + ". CAN'T DEVIDE BY ZERO!");
+		// } else {
+		// double result = firstNumber / secondNumber;
+		//
+		// double resultMethod = calculator.divide(firstNumber, secondNumber);
+		//
+		// LOG.info("Testing the method divide zeros with: " + firstNumber + " and " +
+		// secondNumber
+		// + " . Result of those: " + result + ". Result from Method is: " +
+		// resultMethod);
+		// assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)),
+		// Math.round(result), 1);
+		// }
 
-			LOG.info(firstNumber + " , " + secondNumber + ". CAN'T DEVIDE BY ZERO!");
-		} else {
-			double result = firstNumber / secondNumber;
+		// Test of handling 0-erros in Main
+		double result = firstNumber / secondNumber;
+		double resultMethod = calculator.divide(firstNumber, secondNumber);
 
-			double resultMethod = calculator.divide(firstNumber, secondNumber);
-
-			LOG.info("Testing the method divide zeros with: " + firstNumber + " and " + secondNumber
-					+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
-			assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result), 1);
-		}
-
+		LOG.info("Testing the method divide zeros with: " + firstNumber + " and " + secondNumber
+				+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
+		assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result), 1);
 	}
 
 	@Test

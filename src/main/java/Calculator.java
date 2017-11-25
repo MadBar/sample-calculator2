@@ -71,6 +71,7 @@ public class Calculator {
 	public double divide(double firstNumber, double secondNumber) {
 		// return firstNumber/secondNumber;
 
+		//Program doesn't go in here when testing.. odd.. 
 		try {
 			return firstNumber / secondNumber;
 		} catch (ArithmeticException exc) // divide by zero catch subclass
