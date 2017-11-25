@@ -32,7 +32,7 @@ public class AdditionTest {
 			// testing other way:
 			double resultMethod = calculator.add(firstNumber, secondNumber);
 
-			LOG.info("Testing the method add small with: " + firstNumber + " and " + secondNumber
+			LOG.info("Testing the method add small positive with: " + firstNumber + " and " + secondNumber
 					+ " . Result of those: " + result + ". The temp is " + resultMethod);
 			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
 
@@ -54,7 +54,7 @@ public class AdditionTest {
 			// clarification. See above method for original.
 			double resultMethod = calculator.add(firstNumber, secondNumber);
 
-			LOG.info("Testing the method add medium with: " + firstNumber + " and " + secondNumber
+			LOG.info("Testing the method add medium positive with: " + firstNumber + " and " + secondNumber
 					+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
 			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
 
@@ -74,7 +74,7 @@ public class AdditionTest {
 
 			double resultMethod = calculator.add(firstNumber, secondNumber);
 
-			LOG.info("Testing the method add large with: " + firstNumber + " and " + secondNumber
+			LOG.info("Testing the method add large positive with: " + firstNumber + " and " + secondNumber
 					+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
 			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
 
@@ -145,7 +145,7 @@ public class AdditionTest {
 
 			double resultMethod = calculator.add(firstNumber, secondNumber);
 
-			LOG.info("Testing the method add small with: " + firstNumber + " and " + secondNumber
+			LOG.info("Testing the method add small negative with: " + firstNumber + " and " + secondNumber
 					+ " . Result of those: " + result + ". The temp is " + resultMethod);
 			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
 
@@ -159,15 +159,15 @@ public class AdditionTest {
 		double result = 0;
 
 		for (int i = 0; i < 5; i++) {
-			firstNumber = Double.valueOf(df.format(random.nextDouble() * 100));
-			secondNumber = Double.valueOf(df.format(random.nextDouble() * 100));
+			firstNumber = Double.valueOf(df.format(random.nextDouble() * -100));
+			secondNumber = Double.valueOf(df.format(random.nextDouble() * -100));
 			result = firstNumber + secondNumber;
 
 			// not in the assignment. All following methods will include this for
 			// clarification. See above method for original.
 			double resultMethod = calculator.add(firstNumber, secondNumber);
 
-			LOG.info("Testing the method add medium with: " + firstNumber + " and " + secondNumber
+			LOG.info("Testing the method add medium negative with: " + firstNumber + " and " + secondNumber
 					+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
 			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
 
@@ -181,13 +181,13 @@ public class AdditionTest {
 		double result = 0;
 
 		for (int i = 0; i < 5; i++) {
-			firstNumber = Double.valueOf(df.format(random.nextDouble() * 1000));
-			secondNumber = Double.valueOf(df.format(random.nextDouble() * 1000));
+			firstNumber = Double.valueOf(df.format(random.nextDouble() * -1000));
+			secondNumber = Double.valueOf(df.format(random.nextDouble() * -1000));
 			result = firstNumber + secondNumber;
 
 			double resultMethod = calculator.add(firstNumber, secondNumber);
 
-			LOG.info("Testing the method add large with: " + firstNumber + " and " + secondNumber
+			LOG.info("Testing the method add large negative with: " + firstNumber + " and " + secondNumber
 					+ " . Result of those: " + result + ". Result from Method is: " + resultMethod);
 			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
 
